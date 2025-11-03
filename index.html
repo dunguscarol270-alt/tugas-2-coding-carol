@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Komunitas Teknologi</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Pink Muda yang sedikit lebih cerah */
+            background-color: #f9a6b0; 
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            /* Warna Putih untuk kontras dengan background pink */
+            color: #ffffff; 
+        }
+
+        form {
+            background-color: #fff; 
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        fieldset {
+            /* Border pink muda */
+            border: 1px solid #F4DCE1; 
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+
+        legend {
+            /* Pink accent */
+            color: #C6788A; 
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; 
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            /* Highlight pink saat fokus */
+            border-color: #C6788A; 
+            outline: none;
+        }
+
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            display: inline-block;
+            margin-bottom: 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+
+        input[type="file"] {
+            border: 1px solid #ddd;
+            padding: 8px;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+
+        .button-group {
+            text-align: right;
+        }
+
+        .button-group button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button[type="reset"] {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #bbb;
+        }
+
+        button[type="submit"] {
+            /* Pink accent */
+            background-color: #C6788A; 
+            color: white;
+        }
+
+        button[type="submit"]:hover {
+            /* Pink sedikit lebih gelap */
+            background-color: #b36376; 
+        }
+
+
+        footer {
+            margin-top: 30px;
+            color: #ffffff;
+            font-size: 0.9em;
+        }
+    </style>
+    </head>
+<body>
+    <header>
+        <h1>Formulir Pendaftaran Komunitas Teknologi</h1>
+    </header>
+    <main>
+        <form action="submit.html" method="post">
+            
+            <fieldset>
+                <legend>Data Diri Anggota</legend>
+                
+                <div class="form-group">
+                    <label for="nama_lengkap">Nama Lengkap:</label>
+                    <input type="text" id="nama_lengkap" name="nama_lengkap" 
+                           placeholder="Masukkan nama lengkap Anda" required 
+                           autocomplete="name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Alamat Email:</label>
+                    <input type="email" id="email" name="email" 
+                           placeholder="carol@domain.com" required 
+                           autocomplete="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Kata Sandi:</label>
+                    <input type="password" id="password" name="password" 
+                           placeholder="Minimal 8 karakter" required 
+                           minlength="8" autocomplete="new-password">
+                </div>
+                
+                <div class="form-group">
+                    <label for="usia">Usia (Tahun):</label>
+                    <input type="number" id="usia" name="usia" 
+                           placeholder="Min. 17" required 
+                           min="17" max="99">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tanggal_lahir">Tanggal Lahir:</label>
+                    <input type="date" id="tanggal_lahir" name="tanggal_lahir" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Jenis Kelamin:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="laki_laki" name="jenis_kelamin" value="Laki-laki" required>
+                        <label for="laki_laki">Laki-laki</label>
+                        
+                        <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan">
+                        <label for="perempuan">Perempuan</label>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Informasi Kontak & Minat</legend>
+
+                <div class="form-group">
+                    <label for="telepon">Nomor Telepon:</label>
+                    <input type="tel" id="telepon" name="telepon" 
+                           placeholder="e.g., 0812-3456-7890" required
+                           pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" 
+                           title="Format: 0000-0000-0000" 
+                           autocomplete="tel">
+                </div>
+                
+                <div class="form-group">
+                    <label for="portofolio">Link Portofolio (URL):</label>
+                    <input type="url" id="portofolio" name="portofolio" 
+                           placeholder="https://example.com/portofolio"
+                           autocomplete="url">
+                </div>
+
+                <div class="form-group">
+                    <label>Minat (Pilih minimal satu):</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="minat_ai" name="minat[]" value="AI">
+                        <label for="minat_ai">AI</label>
+                        
+                        <input type="checkbox" id="minat_web" name="minat[]" value="Web">
+                        <label for="minat_web">Web</label>
+                        
+                        <input type="checkbox" id="minat_iot" name="minat[]" value="IoT">
+                        <label for="minat_iot">IoT</label>
+                        
+                        <input type="checkbox" id="minat_game" name="minat[]" value="Game">
+                        <label for="minat_game">Game</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="foto_profil">Upload Foto Profil:</label>
+                    <input type="file" id="foto_profil" name="foto_profil" accept="image/*">
+                </div>
+
+            </fieldset>
+
+            <div class="button-group">
+                <button type="reset">Reset</button>
+                <button type="submit">Daftar Sekarang</button>
+            </div>
+
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Carol Falia</p>
+    </footer>
+</body>
+</html>
